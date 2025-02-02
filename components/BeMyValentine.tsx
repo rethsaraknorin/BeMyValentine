@@ -12,7 +12,7 @@ export default function BeMyValentine() {
     if (yesPressed) {
       const timer = setTimeout(() => {
         setCelebrationStep(1);
-      }, 2000);
+      }, 500);
       return () => clearTimeout(timer);
     }
   }, [yesPressed]);
