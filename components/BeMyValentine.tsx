@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function BeMyValentine() {
   const [noCount, setNoCount] = useState(0);
@@ -11,7 +12,7 @@ export default function BeMyValentine() {
     if (yesPressed) {
       const timer = setTimeout(() => {
         setCelebrationStep(1);
-      }, 500);
+      }, 2000);
       return () => clearTimeout(timer);
     }
   }, [yesPressed]);
@@ -79,8 +80,8 @@ export default function BeMyValentine() {
       };
     } else {
       return {
-        image: "https://media.tenor.com/wXfUjrXrdY4AAAAM/h%C3%B4n.gif",
-        text: "YAYYYYYYYY!!! I love you so mucheresttttt!!"
+        image: "https://media.tenor.com/In7EGQ-SxhwAAAAM/really-happy-cute.gif",
+        text: "We're going to have the best Valentine's Day ever!!! 💕💘💖"
       };
     }
   };
@@ -89,22 +90,26 @@ export default function BeMyValentine() {
     <div className="flex min-h-screen flex-col items-center justify-center px-4">
       {yesPressed ? (
         <div className="text-center">
-          <div className="mx-auto mb-8 w-full max-w-md">
-            <img
+          <div className="mx-auto mb-8 w-full max-w-md relative h-64">
+            <Image
               src={getCelebrationContent().image}
               alt="Love celebration"
-              className="mx-auto h-64 w-auto object-contain transition-all duration-300 hover:scale-110"
+              fill
+              className="object-contain transition-all duration-300 hover:scale-110"
+              unoptimized
             />
           </div>
           <div className="text-4xl font-bold">{getCelebrationContent().text}</div>
         </div>
       ) : (
         <div className="text-center">
-          <div className="mx-auto mb-8 w-full max-w-md">
-            <img
+          <div className="mx-auto mb-8 w-full max-w-md relative h-64">
+            <Image
               src={getCurrentImage()}
               alt="Yayy"
-              className="mx-auto h-64 w-auto object-contain transition-all duration-300 hover:scale-110"
+              fill
+              className="object-contain transition-all duration-300 hover:scale-110"
+              unoptimized
             />
           </div>
           <h1 className="mb-8 text-4xl font-bold">Will you be my Valentine?</h1>
