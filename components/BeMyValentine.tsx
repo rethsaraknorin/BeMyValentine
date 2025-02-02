@@ -80,8 +80,8 @@ export default function BeMyValentine() {
       };
     } else {
       return {
-        image: "https://media.tenor.com/In7EGQ-SxhwAAAAM/really-happy-cute.gif",
-        text: "We're going to have the best Valentine's Day ever!!! 💕💘💖"
+        image: "https://media.tenor.com/wXfUjrXrdY4AAAAM/h%C3%B4n.gif",
+        text: "YAYYYYYYYY!!! I love you so mucheresttttt!!"
       };
     }
   };
